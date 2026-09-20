@@ -222,40 +222,6 @@ h1 {
   line-height: 1.5;
 }
 
-.signal-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: var(--ink);
-  color: var(--white);
-}
-
-.signal-strip div {
-  min-height: 180px;
-  padding: 2.2rem 4vw;
-  border-right: 1px solid rgba(255, 255, 255, 0.24);
-}
-
-.signal-strip div:last-child {
-  border-right: 0;
-}
-
-.signal-strip strong {
-  display: block;
-  color: var(--mint);
-  font-family: "Manrope", sans-serif;
-  font-size: 2.4rem;
-  line-height: 1;
-}
-
-.signal-strip span {
-  display: block;
-  max-width: 280px;
-  margin-top: 0.8rem;
-  color: #e4e4e6;
-  font-size: 0.95rem;
-  line-height: 1.45;
-}
-
 .section {
   width: min(var(--max), 92vw);
   margin: 0 auto;
@@ -383,6 +349,14 @@ h2 {
   color: #dedffe;
 }
 
+@media (min-width: 1000px) {
+  .work-section .section-heading h2 {
+    max-width: none;
+    white-space: nowrap;
+    font-size: 3.1rem;
+  }
+}
+
 .feature-snap {
   grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
   background: var(--white);
@@ -446,20 +420,21 @@ h2 {
   margin-top: 1.5rem;
   padding: 4rem;
   border-radius: 6px;
-  background: var(--blue-dark);
-  color: var(--white);
+  border: 1px solid #b8c8ec;
+  background: #e8efff;
+  color: var(--ink);
 }
 
 .wallet-feature h3 {
   margin: 0;
-  color: var(--mint);
+  color: var(--blue-dark);
   font-size: 3rem;
 }
 
 .wallet-feature p:not(.project-meta) {
   max-width: 640px;
   margin: 1.25rem 0 0;
-  color: #dadbf5;
+  color: #3e4352;
   font-size: 1.05rem;
 }
 
@@ -471,36 +446,40 @@ h2 {
 
 .wallet-principles span {
   padding: 0.95rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  border-bottom: 1px solid rgba(17, 18, 23, 0.2);
   font-family: "Manrope", sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
-.wallet-links {
+.wallet-status {
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(17, 18, 23, 0.2);
 }
 
-.button-mint {
-  border-color: var(--mint);
-  background: var(--mint);
-  color: var(--ink);
-}
-
-.button-mint:hover {
-  background: var(--white);
-  border-color: var(--white);
-}
-
-.text-link-light {
+.wallet-status > span {
+  flex: 0 0 auto;
+  padding: 0.45rem 0.7rem;
+  border-radius: 4px;
+  background: var(--blue);
   color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.text-link-light:hover {
-  color: var(--mint);
+.wallet-status strong {
+  display: block;
+  font-family: "Manrope", sans-serif;
+}
+
+.wallet-status p:not(.project-meta) {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
 }
 
 .additional-work {
@@ -790,7 +769,6 @@ details p {
     right: 0;
   }
 
-  .signal-strip,
   .feature,
   .wallet-feature,
   .project-grid,
@@ -798,12 +776,6 @@ details p {
   .about-grid,
   .site-footer {
     grid-template-columns: 1fr;
-  }
-
-  .signal-strip div {
-    min-height: 0;
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
   }
 
   .section {
@@ -865,7 +837,7 @@ details p {
     font-size: 2.2rem;
   }
 
-  .wallet-links {
+  .wallet-status {
     grid-column: auto;
     align-items: flex-start;
     flex-direction: column;
