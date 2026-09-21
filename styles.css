@@ -208,16 +208,15 @@ h1 {
 
 .portrait-note {
   position: relative;
-  width: min(230px, 88%);
-  margin: -1.25rem -1rem 0 auto;
-  padding: 0.8rem 1rem;
-  border: 1px solid rgba(17, 18, 23, 0.4);
-  border-radius: 6px;
-  background: var(--mint);
+  width: 100%;
+  margin: 1rem 0 0;
+  padding: 0;
+  color: var(--muted);
   font-family: "Manrope", sans-serif;
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 600;
   line-height: 1.5;
+  text-align: center;
 }
 
 .section {
@@ -702,10 +701,6 @@ details p {
   .portrait-wrap {
     width: min(72vw, 250px);
     justify-self: start;
-  }
-
-  .portrait-note {
-    margin-right: -1rem;
   }
 
   .selected-work-grid,
