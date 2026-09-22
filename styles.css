@@ -318,10 +318,27 @@ h2 {
 }
 
 @media (min-width: 1000px) {
-  .work-section .section-heading h2 {
+  h1 {
     max-width: none;
     white-space: nowrap;
+  }
+
+  .section-heading h2 {
+    max-width: none;
+  }
+
+  .work-section .section-heading h2 {
+    white-space: nowrap;
     font-size: 3.1rem;
+  }
+
+  .additional-work .section-heading h2 {
+    white-space: nowrap;
+    font-size: 3.1rem;
+  }
+
+  .about-section .section-heading h2 {
+    font-size: 3rem;
   }
 }
 
