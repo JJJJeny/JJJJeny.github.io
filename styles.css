@@ -694,6 +694,7 @@ details p {
   padding: 6rem max(4vw, calc((100vw - var(--max)) / 2));
   background: var(--blue);
   color: var(--white);
+  scroll-margin-top: 72px;
 }
 
 .site-footer .eyebrow {
