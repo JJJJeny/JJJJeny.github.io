@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jenny Yang's ongoing agentic AI evaluation research tests whether retrieval and tool use can recover restricted information after model-level unlearning." />
+    <meta name="author" content="Jenny (Yung-Ching) Yang" />
+    <link rel="canonical" href="https://jjjjeny.github.io/projects/agentic-unlearning/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Agentic AI Unlearning Evaluation | Jenny Yang" />
+    <meta property="og:description" content="A controlled evaluation of retrieval, tool use, recovery paths, and runtime safeguards in agentic systems." />
+    <meta property="og:url" content="https://jjjjeny.github.io/projects/agentic-unlearning/" />
+    <meta property="og:image" content="https://jjjjeny.github.io/assets/jenny-headshot.jpg" />
+    <title>Agentic AI Unlearning Evaluation | Jenny Yang</title>
+    <link rel="icon" type="image/webp" href="../../assets/yc-icon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../project.css" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"ResearchProject","name":"Agentic AI Unlearning Evaluation","author":{"@type":"Person","name":"Jenny Yang","url":"https://jjjjeny.github.io/"},"url":"https://jjjjeny.github.io/projects/agentic-unlearning/","about":["Agentic AI","AI evaluation","Machine unlearning","Retrieval","Tool use"]}
+    </script>
+  </head>
+  <body>
+    <header class="site-header"><a href="../../">Jenny Yang</a><a href="../../#work">All work</a></header>
+    <main>
+      <section class="case-hero">
+        <p class="eyebrow">UT Austin &middot; Agentic AI evaluation &middot; Ongoing</p>
+        <h1>Testing what model-level unlearning misses</h1>
+        <p class="dek">This study asks a system-level question: if information is suppressed in model weights, can an agent recover it through retrieval or tools?</p>
+        <dl class="case-facts"><div><dt>Role</dt><dd>Research Assistant</dd></div><div><dt>Design</dt><dd>Four experimental conditions</dd></div><div><dt>Scale</dt><dd>10 tasks, 120 planned trials</dd></div></dl>
+      </section>
+      <div class="case-body">
+        <nav class="case-nav" aria-label="Case study sections"><a href="#question">Question</a><a href="#design">Study design</a><a href="#workflow">Evaluation workflow</a><a href="#status">Current status</a><a href="#implications">Product implications</a></nav>
+        <article class="case-content">
+          <section id="question"><p class="eyebrow">01 &middot; Research question</p><h2>Model behavior is only one layer of an agentic system</h2><p>Model-level unlearning is intended to reduce access to selected information. An agent, however, can also search, retrieve documents, and call tools. I am evaluating whether those additional paths can reintroduce information that appears unavailable when the model is tested on its own.</p><p>The product relevance is straightforward: teams need to evaluate the complete workflow they deploy, not only the underlying model.</p></section>
+          <section id="design"><p class="eyebrow">02 &middot; Study design</p><h2>Separate the model, retrieval, and tool effects</h2><p>I designed a four-condition evaluation spanning 10 tasks and 120 planned trials. Comparing conditions makes it possible to distinguish model-only behavior from recovery enabled by retrieval or tool access.</p><div class="metric-grid"><div class="metric"><strong>4</strong><span>Experimental conditions isolating system capabilities</span></div><div class="metric"><strong>120</strong><span>Planned trials across 10 evaluation tasks</span></div></div><p>Each run captures whether restricted information is recovered, how the recovery occurs, and which failure mode appears.</p></section>
+          <section id="workflow"><p class="eyebrow">03 &middot; Evaluation workflow</p><h2>Turn agent traces into comparable evidence</h2><p>I structured the workflow to record task outcomes, recovery paths, and failure modes consistently across conditions. The analysis focuses on where information enters the response, whether tool access changes the result, and which controls would have interrupted the path.</p><ul><li>Task-level outcome and recovery status</li><li>Condition and trial comparison</li><li>Tool and retrieval traces</li><li>Failure-mode classification</li></ul></section>
+          <section id="status"><p class="eyebrow">04 &middot; Current status</p><h2>Early results are informing the next evaluation cycle</h2><p>Initial runs are complete, and data collection and analysis are continuing. Because this is ongoing research, I am treating early patterns as hypotheses to test rather than final conclusions.</p><div class="callout"><strong>Current focus:</strong> verify repeatability, compare recovery rates across conditions, and determine whether the observed failures point to model, retrieval, or runtime-control gaps.</div></section>
+          <section id="implications"><p class="eyebrow">05 &middot; Product implications</p><h2>AI safety requirements need system-level acceptance criteria</h2><p>This work changes how I think about technical product requirements. A model-level control cannot be treated as sufficient when the deployed product adds retrieval, tools, memory, or external data. Evaluation plans should reflect the real architecture and include runtime safeguards, trace review, and explicit failure criteria.</p></section>
+        </article>
+      </div>
+      <div class="next-project"><p class="eyebrow">Next case</p><a href="../contract-review-agent/">Contract Review Agent &rarr;</a></div>
+    </main>
+    <footer><p>Jenny (Yung-Ching) Yang &middot; Technical Product Manager &middot; Austin, Texas</p></footer>
+  </body>
+</html>

@@ -328,12 +328,10 @@ h2 {
   }
 
   .work-section .section-heading h2 {
-    white-space: nowrap;
     font-size: 3.1rem;
   }
 
   .additional-work .section-heading h2 {
-    white-space: nowrap;
     font-size: 3.1rem;
   }
 
@@ -342,46 +340,79 @@ h2 {
   }
 }
 
-.snap-summary {
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  padding: 1.35rem;
-  background: #f2f4f7;
-}
-
-.snap-summary img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.wallet-summary {
+.evaluation-summary,
+.agent-summary {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1.75rem;
+}
+
+.evaluation-summary {
   background: #e8efff;
   color: var(--blue-dark);
 }
 
-.status-label {
-  width: fit-content;
-  padding: 0.35rem 0.55rem;
-  border-radius: 4px;
-  background: var(--blue-dark);
-  color: var(--white);
-  font-size: 0.72rem;
+.evaluation-summary p,
+.agent-summary p {
+  margin: 0;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.wallet-summary strong {
-  display: block;
-  padding: 0.45rem 0;
-  border-bottom: 1px solid #b8c8ec;
+.evaluation-summary strong {
   font-family: "Manrope", sans-serif;
-  font-size: 1rem;
+  font-size: 2.2rem;
+}
+
+.evaluation-summary span,
+.evaluation-summary small,
+.agent-summary small {
+  font-size: 0.86rem;
+}
+
+.condition-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.condition-row i {
+  height: 36px;
+  border: 2px solid currentColor;
+}
+
+.condition-row i:nth-child(2),
+.condition-row i:nth-child(4) {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+
+.agent-summary {
+  background: var(--mint);
+  color: #123c35;
+}
+
+.agent-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.agent-flow span {
+  padding: 0.8rem 0.4rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.agent-flow b {
+  font-weight: 700;
 }
 
 .selected-card-copy {
@@ -510,7 +541,8 @@ details p {
   padding: 6rem 0 0;
 }
 
-.research-links a {
+.research-links a,
+.research-links .research-item {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -518,6 +550,10 @@ details p {
   padding: 1.2rem 0;
   border-top: 1px solid var(--line);
   text-decoration: none;
+}
+
+.research-links .research-item {
+  color: var(--ink);
 }
 
 .research-links a:last-child {

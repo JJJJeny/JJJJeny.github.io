@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="How Jenny Yang used customer evidence, product data, and cross-functional execution to help move Cloudflare Certificate Transparency Monitoring from public beta to general availability." />
+    <meta name="author" content="Jenny (Yung-Ching) Yang" />
+    <link rel="canonical" href="https://jjjjeny.github.io/projects/cloudflare/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cloudflare Certificate Transparency Monitoring | Jenny Yang" />
+    <meta property="og:description" content="A technical product management case study in cloud security, alert quality, and general availability." />
+    <meta property="og:url" content="https://jjjjeny.github.io/projects/cloudflare/" />
+    <meta property="og:image" content="https://jjjjeny.github.io/assets/jenny-headshot.jpg" />
+    <title>Cloudflare Certificate Transparency Monitoring | Jenny Yang</title>
+    <link rel="icon" type="image/webp" href="../../assets/yc-icon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../project.css" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"CreativeWork","name":"Cloudflare Certificate Transparency Monitoring: From Public Beta to General Availability","author":{"@type":"Person","name":"Jenny Yang","url":"https://jjjjeny.github.io/"},"url":"https://jjjjeny.github.io/projects/cloudflare/","about":["Product management","Cloud security","Certificate Transparency","Alert fatigue"]}
+    </script>
+  </head>
+  <body>
+    <header class="site-header"><a href="../../">Jenny Yang</a><a href="../../#work">All work</a></header>
+    <main>
+      <section class="case-hero">
+        <p class="eyebrow">Cloudflare &middot; Technical product management &middot; 2026</p>
+        <h1>Turning certificate noise into a useful security signal</h1>
+        <p class="dek">I helped move Certificate Transparency Monitoring from a seven-year public beta to general availability by connecting customer evidence, product data, technical constraints, and launch execution.</p>
+        <dl class="case-facts">
+          <div><dt>Role</dt><dd>Product Manager Intern</dd></div>
+          <div><dt>Scope</dt><dd>Discovery through GA launch</dd></div>
+          <div><dt>Reach</dt><dd>650K+ customer domains</dd></div>
+        </dl>
+      </section>
+      <div class="case-body">
+        <nav class="case-nav" aria-label="Case study sections">
+          <a href="#problem">Problem</a><a href="#evidence">Evidence</a><a href="#decision">Decision</a><a href="#delivery">Delivery</a><a href="#outcome">Outcome</a>
+        </nav>
+        <article class="case-content">
+          <section id="problem">
+            <p class="eyebrow">01 &middot; Problem</p><h2>A security product customers were learning to ignore</h2>
+            <p>Certificate Transparency Monitoring alerts customers when a certificate is issued for one of their domains. The product had remained in public beta for seven years, and its alerts mixed potentially meaningful certificate events with routine Cloudflare-managed activity.</p>
+            <p>The product challenge was not simply to send more alerts. It was to improve signal quality, clarify the experience across plan tiers, and establish a feasible path to general availability.</p>
+          </section>
+          <section id="evidence">
+            <p class="eyebrow">02 &middot; Evidence</p><h2>Customer feedback established the priority</h2>
+            <p>I synthesized 14 Cloudflare Community threads, 20 support tickets, Salesforce records, and customer success feedback. Alert fatigue emerged as the primary adoption barrier, ahead of dashboard confusion and unclear email content.</p>
+            <p>I also queried product data to understand the size of the active customer base, subscription behavior, and how plan-tier decisions would affect the launch. Industry research showed that shorter certificate lifetimes would increase renewal frequency, making noisy alerts a growing problem rather than a temporary one.</p>
+            <div class="metric-grid">
+              <div class="metric"><strong>14 + 20</strong><span>Community threads and support tickets synthesized</span></div>
+              <div class="metric"><strong>650K+</strong><span>Customer domains in the product scope</span></div>
+            </div>
+          </section>
+          <section id="decision">
+            <p class="eyebrow">03 &middot; Product decision</p><h2>Filter routine events before asking customers to act</h2>
+            <p>I authored the PRD and a two-phase roadmap that prioritized automatic filtering of Cloudflare-managed certificates and a clearer experience across plan tiers. I used Figma Make to make the proposed flow concrete and align with engineering on scope and feasibility.</p>
+            <ul><li>Phase 1 focused on filtering, clearer alerts, and launch readiness.</li><li>Phase 2 documented deeper notification-system integration and advanced controls for future development.</li></ul>
+          </section>
+          <section id="delivery">
+            <p class="eyebrow">04 &middot; Delivery</p><h2>One launch, several interdependent workstreams</h2>
+            <p>I coordinated work across engineering, customer success, product legal, design, developer documentation, and go-to-market partners. The launch combined backend filtering, alert copy, dashboard changes, documentation, and a customer-facing announcement.</p>
+            <div class="callout"><strong>My role:</strong> maintain the customer problem and product scope while helping each team understand the decisions, dependencies, and launch criteria that affected its work.</div>
+          </section>
+          <section id="outcome">
+            <p class="eyebrow">05 &middot; Outcome</p><h2>General availability with measurable noise reduction</h2>
+            <p>During the initial six-day rollout, the filtering system automatically suppressed 199,394 of 332,694 processed certificate events. That 60% filter rate reduced unnecessary certificate-alert volume before it reached customers.</p>
+            <div class="metric-grid"><div class="metric"><strong>199K</strong><span>Certificate events automatically suppressed</span></div><div class="metric"><strong>60%</strong><span>Filter rate during the initial six-day rollout</span></div></div>
+            <div class="artifact-links"><a href="https://blog.cloudflare.com/certificate-transparency-monitoring-ga/" target="_blank" rel="noreferrer">Read the GA launch blog &nearr;</a></div>
+          </section>
+        </article>
+      </div>
+      <div class="next-project"><p class="eyebrow">Next case</p><a href="../agentic-unlearning/">Agentic unlearning evaluation &rarr;</a></div>
+    </main>
+    <footer><p>Jenny (Yung-Ching) Yang &middot; Technical Product Manager &middot; Austin, Texas</p></footer>
+  </body>
+</html>
