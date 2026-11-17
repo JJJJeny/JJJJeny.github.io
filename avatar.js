@@ -1,8 +1,7 @@
 (() => {
   const stage = document.querySelector('.avatar-stage');
-  const toggle = document.querySelector('.motion-toggle');
   const status = document.querySelector('.avatar-status');
-  if (!stage || !toggle) return;
+  if (!stage || !status) return;
 
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   let enabled = !preference.matches;
@@ -13,15 +12,11 @@
     enabled = value;
     stage.classList.toggle('motion-enabled', enabled);
     stage.classList.toggle('motion-paused', !enabled);
-    toggle.setAttribute('aria-pressed', String(enabled));
-    toggle.textContent = enabled ? 'Motion on' : 'Motion off';
     stage.style.removeProperty('--gaze-x');
     stage.style.removeProperty('--gaze-y');
   };
 
-  toggle.hidden = false;
   setMotion(enabled);
-  toggle.addEventListener('click', () => setMotion(!enabled));
   preference.addEventListener('change', (event) => setMotion(!event.matches));
 
   window.addEventListener('pointermove', (event) => {

@@ -153,10 +153,13 @@ h1 {
 .hero-copy {
   grid-area: copy;
   min-width: 0;
+  width: max-content;
+  max-width: 100%;
 }
 
 .hero-values {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0;
   margin: 1.6rem 0 0;
@@ -193,8 +196,7 @@ h1 {
   -webkit-tap-highlight-color: transparent;
 }
 
-.avatar-stage:focus-visible,
-.motion-toggle:focus-visible {
+.avatar-stage:focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: 6px;
   border-radius: 12px;
@@ -208,35 +210,6 @@ h1 {
 .avatar-greeting { opacity: 0; }
 .is-waving .avatar-hand { opacity: 1; animation: avatar-wave 1.4s ease-in-out; }
 .is-waving .avatar-greeting { opacity: 1; }
-.avatar-hint {
-  position: absolute;
-  right: 0;
-  bottom: 9%;
-  font: 600 .8rem "Manrope", sans-serif;
-  transform: rotate(-8deg);
-}
-.avatar-hint span { color: var(--blue); }
-.motion-toggle {
-  display: block;
-  margin: .75rem auto 0;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-size: .7rem;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
-}
-.motion-toggle[hidden] { display: none; }
-.about-photo {
-  width: 96px;
-  height: 96px;
-  margin-bottom: 1.5rem;
-  object-fit: cover;
-  object-position: center 36%;
-  border-radius: 50%;
-}
 .visually-hidden {
   position: absolute;
   width: 1px;
