@@ -669,23 +669,6 @@ details p {
   color: #cacbd0;
 }
 
-.education-note {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2.5rem;
-  margin: 3rem 0 0 80px;
-  color: #dddde0;
-  font-size: 0.94rem;
-}
-
-.education-note p {
-  margin: 0;
-}
-
-.education-note span {
-  color: var(--mint);
-}
-
 .about-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -855,7 +838,6 @@ details p {
   }
 
   .timeline,
-  .education-note,
   .about-grid {
     margin-left: 0;
   }
