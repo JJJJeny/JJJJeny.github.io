@@ -201,50 +201,6 @@ h1 {
   justify-self: end;
 }
 
-.hero-proof {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 0;
-  padding: 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.hero-proof > div {
-  min-height: 108px;
-  padding: 1.35rem clamp(1.25rem, 2.5vw, 2.5rem);
-}
-
-.hero-proof > div:first-child {
-  padding-left: 0;
-}
-
-.hero-proof > div + div {
-  border-left: 1px solid var(--line);
-}
-
-.hero-proof strong,
-.hero-proof span {
-  display: block;
-}
-
-.hero-proof strong {
-  margin-bottom: 0.45rem;
-  color: var(--blue);
-  font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-}
-
-.hero-proof span {
-  max-width: 30ch;
-  font-family: "Manrope", Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
 .portrait {
   width: 100%;
   height: auto;
@@ -806,24 +762,6 @@ details p {
   .portrait-wrap {
     width: min(72vw, 250px);
     justify-self: start;
-    order: 3;
-  }
-
-  .hero-proof {
-    grid-column: auto;
-    grid-template-columns: 1fr;
-    order: 2;
-  }
-
-  .hero-proof > div,
-  .hero-proof > div:first-child {
-    min-height: 0;
-    padding: 1rem 0;
-  }
-
-  .hero-proof > div + div {
-    border-top: 1px solid var(--line);
-    border-left: 0;
   }
 
   .selected-work-grid,
