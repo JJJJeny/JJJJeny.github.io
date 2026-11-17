@@ -3,40 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jenny Yang's ongoing agentic AI evaluation research tests whether retrieval and tool use can recover restricted information after model-level unlearning." />
+    <meta name="description" content="Jenny Yang evaluated whether a coding agent forgets a learned skill after its conversation, skill files, outputs, and runtime history are removed." />
     <meta name="author" content="Jenny (Yung-Ching) Yang" />
     <link rel="canonical" href="https://jjjjeny.github.io/projects/agentic-unlearning/" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Agentic AI Unlearning Evaluation | Jenny Yang" />
-    <meta property="og:description" content="A controlled evaluation of retrieval, tool use, recovery paths, and runtime safeguards in agentic systems." />
+    <meta property="og:title" content="Agentic Skill Unlearning Evaluation | Jenny Yang" />
+    <meta property="og:description" content="A runtime evaluation of whether removing an agent's skill traces makes it behave like an agent that never saw the skill." />
     <meta property="og:url" content="https://jjjjeny.github.io/projects/agentic-unlearning/" />
     <meta property="og:image" content="https://jjjjeny.github.io/assets/jenny-headshot.jpg" />
-    <title>Agentic AI Unlearning Evaluation | Jenny Yang</title>
+    <title>Agentic Skill Unlearning Evaluation | Jenny Yang</title>
     <link rel="icon" type="image/webp" href="../../assets/yc-icon.webp" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../project.css" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"ResearchProject","name":"Agentic AI Unlearning Evaluation","author":{"@type":"Person","name":"Jenny Yang","url":"https://jjjjeny.github.io/"},"url":"https://jjjjeny.github.io/projects/agentic-unlearning/","about":["Agentic AI","AI evaluation","Machine unlearning","Retrieval","Tool use"]}
+      {"@context":"https://schema.org","@type":"ResearchProject","name":"Agentic Skill Unlearning Evaluation","author":{"@type":"Person","name":"Jenny Yang","url":"https://jjjjeny.github.io/"},"url":"https://jjjjeny.github.io/projects/agentic-unlearning/","about":["Agentic AI","AI evaluation","Skill unlearning","Runtime evaluation","Coding agents"]}
     </script>
   </head>
   <body>
     <header class="site-header"><a href="../../">Jenny Yang</a><a href="../../#work">All work</a></header>
     <main>
       <section class="case-hero">
-        <p class="eyebrow">UT Austin &middot; Agentic AI evaluation &middot; Ongoing</p>
-        <h1>Testing what model-level unlearning misses</h1>
-        <p class="dek">This study asks a system-level question: if information is suppressed in model weights, can an agent recover it through retrieval or tools?</p>
-        <dl class="case-facts"><div><dt>Role</dt><dd>Research Assistant</dd></div><div><dt>Design</dt><dd>Four experimental conditions</dd></div><div><dt>Scale</dt><dd>10 tasks, 120 planned trials</dd></div></dl>
+        <p class="eyebrow">UT Austin &middot; Agentic AI evaluation &middot; Preliminary results</p>
+        <h1>Can an agent forget a skill it learned?</h1>
+        <p class="dek">We taught a coding agent a skill, removed every trace we could identify, and tested it on a new version of the task. Unlearning succeeds if the agent then looks like one that never saw the skill.</p>
+        <dl class="case-facts">
+          <div><dt>My contribution</dt><dd>Evaluation design, diagnostics, and analysis</dd></div>
+          <div><dt>System</dt><dd>Codex coding agent with GPT-5.5</dd></div>
+          <div><dt>Task</dt><dd>Adaptive cruise control simulation</dd></div>
+        </dl>
       </section>
+
       <div class="case-body">
-        <nav class="case-nav" aria-label="Case study sections"><a href="#question">Question</a><a href="#design">Study design</a><a href="#workflow">Evaluation workflow</a><a href="#status">Current status</a><a href="#implications">Product implications</a></nav>
+        <nav class="case-nav" aria-label="Case study sections">
+          <a href="#question">Question</a><a href="#method">Method</a><a href="#measure">Measure</a><a href="#input-result">Input result</a><a href="#behavior">Behavior</a><a href="#next">Next test</a>
+        </nav>
         <article class="case-content">
-          <section id="question"><p class="eyebrow">01 &middot; Research question</p><h2>Model behavior is only one layer of an agentic system</h2><p>Model-level unlearning is intended to reduce access to selected information. An agent, however, can also search, retrieve documents, and call tools. I am evaluating whether those additional paths can reintroduce information that appears unavailable when the model is tested on its own.</p><p>The product relevance is straightforward: teams need to evaluate the complete workflow they deploy, not only the underlying model.</p></section>
-          <section id="design"><p class="eyebrow">02 &middot; Study design</p><h2>Separate the model, retrieval, and tool effects</h2><p>I designed a four-condition evaluation spanning 10 tasks and 120 planned trials. Comparing conditions makes it possible to distinguish model-only behavior from recovery enabled by retrieval or tool access.</p><div class="metric-grid"><div class="metric"><strong>4</strong><span>Experimental conditions isolating system capabilities</span></div><div class="metric"><strong>120</strong><span>Planned trials across 10 evaluation tasks</span></div></div><p>Each run captures whether restricted information is recovered, how the recovery occurs, and which failure mode appears.</p></section>
-          <section id="workflow"><p class="eyebrow">03 &middot; Evaluation workflow</p><h2>Turn agent traces into comparable evidence</h2><p>I structured the workflow to record task outcomes, recovery paths, and failure modes consistently across conditions. The analysis focuses on where information enters the response, whether tool access changes the result, and which controls would have interrupted the path.</p><ul><li>Task-level outcome and recovery status</li><li>Condition and trial comparison</li><li>Tool and retrieval traces</li><li>Failure-mode classification</li></ul></section>
-          <section id="status"><p class="eyebrow">04 &middot; Current status</p><h2>Early results are informing the next evaluation cycle</h2><p>Initial runs are complete, and data collection and analysis are continuing. Because this is ongoing research, I am treating early patterns as hypotheses to test rather than final conclusions.</p><div class="callout"><strong>Current focus:</strong> verify repeatability, compare recovery rates across conditions, and determine whether the observed failures point to model, retrieval, or runtime-control gaps.</div></section>
-          <section id="implications"><p class="eyebrow">05 &middot; Product implications</p><h2>AI safety requirements need system-level acceptance criteria</h2><p>This work changes how I think about technical product requirements. A model-level control cannot be treated as sufficient when the deployed product adds retrieval, tools, memory, or external data. Evaluation plans should reflect the real architecture and include runtime safeguards, trace review, and explicit failure criteria.</p></section>
+          <section id="question">
+            <p class="eyebrow">01 &middot; Research question</p>
+            <h2>What does it mean for an agent to forget?</h2>
+            <p>A coding agent can retain information in more places than model weights. The skill text can remain in its conversation, local skill files, generated code, results, or runtime history. We asked whether removing those traces makes the agent's inputs and behavior match a never-trained baseline.</p>
+            <p>This experiment evaluates runtime and input-level skill removal. It does not modify or test the underlying model weights.</p>
+          </section>
+
+          <section id="method">
+            <p class="eyebrow">02 &middot; Method</p>
+            <h2>Learn, remove, then test on a new version</h2>
+            <h3>1. Learn</h3>
+            <p>In Gen1, the agent completed an adaptive cruise control task with five skill files available. The skill text also appeared in the conversation and in files the agent produced.</p>
+            <h3>2. Remove</h3>
+            <p>Before Gen4, we removed the conversation, five skill files, and the code and results written by the earlier agent. Later runs also removed Codex history and system logs.</p>
+            <h3>3. Compare</h3>
+            <p>We tested Gen4 against two references: A0, an agent that never saw the skill, and AS, an agent with the skills still available. Each task ran in its own local Docker container, and the model requests were captured for comparison.</p>
+            <figure class="architecture-figure">
+              <a href="../../assets/agentic-unlearning-architecture.png" target="_blank" rel="noreferrer" aria-label="Open the agentic skill unlearning system architecture at full size">
+                <img src="../../assets/agentic-unlearning-architecture.png" alt="System architecture showing the Docker workspace, skill files, Codex agent harness, tools, Codex runtime files, BenchFlow proxy, and remote GPT-5.5 model, with removed and retained information paths marked." width="1099" height="947" />
+              </a>
+              <figcaption>The runtime architecture and information paths inspected during unlearning. On mobile, tap the diagram to open the full-resolution version.</figcaption>
+            </figure>
+          </section>
+
+          <section id="measure">
+            <p class="eyebrow">03 &middot; Measurement challenge</p>
+            <h2>One hidden formatting rule determined pass or fail</h2>
+            <p>The agent writes an adaptive cruise controller and saves a simulation to CSV. When the leading car is not getting closer, the time-to-collision value has no meaningful value. The grader expects that CSV cell to be empty, but the task does not state this requirement; only the skill specifies returning <code>None</code>.</p>
+            <p>An agent could still pass without using the skill's method by returning infinity internally and blanking the value when writing the CSV. Because the grader reads only the final CSV, both implementations pass.</p>
+            <div class="callout"><strong>Evaluation risk:</strong> the benchmark appeared to measure skill retention, but in practice its final score depended on one underspecified output cell that the model could sometimes guess.</div>
+          </section>
+
+          <section id="input-result">
+            <p class="eyebrow">04 &middot; Result 1</p>
+            <h2>Input-level unlearning held in the measured runs</h2>
+            <div class="metric-grid">
+              <div class="metric"><strong>12 / 12</strong><span>First post-unlearning requests matched A0 except for date and session ID</span></div>
+              <div class="metric"><strong>0 / 350</strong><span>Later post-unlearning requests contained the skill's hidden rule</span></div>
+            </div>
+            <p>With skills available, 49 of 55 requests contained the rule. After removing the conversation, skill files, and agent-written outputs, the saved model requests looked like those of an agent that had never seen the skill.</p>
+            <p>This supports a narrow conclusion: the measured input channels were cleared. It does not, by itself, establish behavioral equivalence.</p>
+          </section>
+
+          <section id="behavior">
+            <p class="eyebrow">05 &middot; Result 2</p>
+            <h2>The behavior gap was suggestive, but not evidence of retained skill</h2>
+            <div class="metric-grid">
+              <div class="metric"><strong>3 / 14</strong><span>Never-trained baseline runs that passed</span></div>
+              <div class="metric"><strong>9 / 14</strong><span>Post-unlearning runs that passed; Fisher p ≈ 0.054</span></div>
+            </div>
+            <p>Most additional passes used an alternative implementation that the never-trained baseline also produced. The skill's specific method appeared in 1 of 14 baseline runs and 4 of 14 post-unlearning runs, a difference that was not statistically separable (p ≈ 0.33).</p>
+            <p>A control where Gen1 never had the skill still passed 3 of 4 times after the same runtime cleanup. This indicates that the higher pass rate can arise without any skill to retain.</p>
+            <div class="callout"><strong>Current interpretation:</strong> input-level removal worked, while the behavioral question remains unresolved because the benchmark is guessable, the sample is small, and experimental arm is mixed with run time.</div>
+          </section>
+
+          <section id="next">
+            <p class="eyebrow">06 &middot; Next test</p>
+            <h2>Replace the guessable rule with a canary</h2>
+            <p>The proposed next experiment replaces the hidden formatting rule with an arbitrary canary value that the model could not plausibly guess. A never-trained agent should not produce it. If it appears after unlearning, that would provide direct evidence of an unremoved information channel.</p>
+            <ul>
+              <li>Alternate experimental arms run by run to reduce time as a confound.</li>
+              <li>Use a canary rule that cannot be solved through ordinary model reasoning.</li>
+              <li>Separate exact input matching from behavioral equivalence in the acceptance criteria.</li>
+            </ul>
+            <p>For product teams, the broader lesson is that an AI evaluation can fail even when the system works as designed. The benchmark itself needs controls, observable traces, and a target behavior that cannot be reached accidentally.</p>
+          </section>
         </article>
       </div>
       <div class="next-project"><p class="eyebrow">Next case</p><a href="../contract-review-agent/">Contract Review Agent &rarr;</a></div>
