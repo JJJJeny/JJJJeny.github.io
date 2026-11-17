@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261117-avatar-2" />
+    <link rel="stylesheet" href="styles.css?v=20261117-polish" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -60,7 +60,7 @@
       <a class="wordmark" href="#top" aria-label="Jenny Yang, home">
         <img src="assets/yc-icon.webp" alt="" width="225" height="225" />
       </a>
-      <nav aria-label="Primary navigation">
+      <nav aria-label="Primary navigation" data-section-nav>
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#about">About</a>
@@ -119,10 +119,8 @@
 
       <section class="section work-section" id="work" aria-labelledby="work-title">
         <div class="section-heading">
-          <p class="section-index">01</p>
           <div>
-            <p class="eyebrow">Selected work</p>
-            <h2 id="work-title">Technical products, grounded in evidence.</h2>
+            <h2 id="work-title">Selected work</h2>
           </div>
         </div>
 
@@ -137,8 +135,8 @@
             </div>
             <div class="selected-card-copy">
               <p class="project-meta">Cloudflare &middot; Product management</p>
-              <h3>Turning alert fatigue into a focused security signal</h3>
-              <p>Led Certificate Transparency Monitoring from public beta to GA, using customer evidence to prioritize automatic filtering and a clearer alert experience.</p>
+              <h3><a href="projects/cloudflare/">Reducing certificate alert fatigue at Cloudflare</a></h3>
+              <p>Helped launch Certificate Transparency Monitoring from public beta to general availability, using customer evidence to prioritize filtering and clearer alerts.</p>
               <dl class="project-evidence">
                 <div><dt>Signal</dt><dd>14 community threads and 20 support tickets</dd></div>
                 <div><dt>Outcome</dt><dd>199K events filtered in the first six days</dd></div>
@@ -151,17 +149,17 @@
             <div class="selected-visual evaluation-summary" aria-label="Agentic unlearning evaluation design summary">
               <p>Runtime evaluation</p>
               <strong>12 / 12</strong>
-              <span>first requests matched the no-skill baseline</span>
+              <span>first requests matched the no-skill baseline inputs</span>
               <div class="condition-row" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-              <small>0 of 350 later requests contained the skill rule</small>
+              <small>Input-level result only. Behavioral forgetting remains unresolved.</small>
             </div>
             <div class="selected-card-copy">
               <p class="project-meta">UT Austin &middot; Agentic skill evaluation</p>
-              <h3>Can an agent forget a skill it learned?</h3>
+              <h3><a href="projects/agentic-unlearning/">Can an agent forget a skill it learned?</a></h3>
               <p>Tested whether removing the conversation, skill files, agent output, and runtime history makes a coding agent behave like one that never saw the skill.</p>
               <dl class="project-evidence">
-                <div><dt>Method</dt><dd>Learn, remove, and retest against two reference arms</dd></div>
-                <div><dt>Finding</dt><dd>Input-level removal held; behavior remains inconclusive</dd></div>
+                <div><dt>Method</dt><dd>Learn, remove, and compare with two baselines</dd></div>
+                <div><dt>Finding</dt><dd>No hidden rule in 350 later requests; behavior remains inconclusive</dd></div>
               </dl>
               <a class="text-link" href="projects/agentic-unlearning/">Read the research case <span aria-hidden="true">&rarr;</span></a>
             </div>
@@ -177,8 +175,8 @@
             </div>
             <div class="selected-card-copy">
               <p class="project-meta">UT Austin &middot; Agentic AI product</p>
-              <h3>Contract review with human judgment built in</h3>
-              <p>Built a bounded agent that helps small businesses review vendor agreements while keeping evidence, uncertainty, and approval visible.</p>
+              <h3><a href="projects/contract-review-agent/">Reviewing contracts with evidence and human approval</a></h3>
+              <p>Co-built an agent that checks vendor agreements, links findings to source clauses, and keeps uncertain decisions with the reviewer.</p>
               <dl class="project-evidence">
                 <div><dt>Workflow</dt><dd>Clause extraction, policy checks, and risk routing</dd></div>
                 <div><dt>Control</dt><dd>Source evidence and human-review checkpoints</dd></div>
@@ -191,10 +189,8 @@
 
       <section class="section additional-work" aria-labelledby="additional-title">
         <div class="section-heading">
-          <p class="section-index">02</p>
           <div>
-            <p class="eyebrow">Earlier UX + research work</p>
-            <h2 id="additional-title">The user-centered foundation behind my technical work.</h2>
+            <h2 id="additional-title">UX + research</h2>
           </div>
         </div>
 
@@ -247,8 +243,7 @@
 
         <div class="research-row" aria-labelledby="research-title">
           <div>
-            <p class="eyebrow">Selected research</p>
-            <h3 id="research-title">Additional technical and research work.</h3>
+            <h3 id="research-title">More experiments + reports</h3>
           </div>
           <div class="research-links">
             <div class="research-item"><span>GEO agent for merchant visibility in AI search</span><small>In development</small></div>
@@ -262,10 +257,8 @@
       <section class="experience-band" id="experience" aria-labelledby="experience-title">
         <div class="section experience-inner">
           <div class="section-heading section-heading-light">
-            <p class="section-index">03</p>
             <div>
-              <p class="eyebrow">Experience</p>
-              <h2 id="experience-title">A product path across security, robotics, and public-interest systems.</h2>
+              <h2 id="experience-title">Experience</h2>
             </div>
           </div>
 
@@ -305,10 +298,8 @@
 
       <section class="section about-section" id="about" aria-labelledby="about-title">
         <div class="section-heading">
-          <p class="section-index">04</p>
           <div>
-            <p class="eyebrow">About</p>
-            <h2 id="about-title">Research instincts, product ownership, and a builder&rsquo;s curiosity.</h2>
+            <h2 id="about-title">About me</h2>
           </div>
         </div>
         <div class="about-grid">
@@ -337,8 +328,7 @@
 
     <footer class="site-footer" id="contact">
       <div>
-        <p class="eyebrow">Let&rsquo;s build something useful.</p>
-        <h2>Have a product problem worth untangling?</h2>
+        <h2>Let&rsquo;s talk.</h2>
       </div>
       <div class="footer-links">
         <a href="mailto:yungching68@gmail.com">Email</a>
@@ -349,6 +339,7 @@
     </footer>
 
     <script src="avatar.js?v=20261117-2" defer></script>
+    <script src="navigation.js" defer></script>
     <!-- Cloudflare Web Analytics -->
     <script
       type="module"

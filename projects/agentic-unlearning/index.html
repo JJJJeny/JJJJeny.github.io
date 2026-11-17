@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../project.css" />
+    <link rel="stylesheet" href="../../project.css?v=20261117-polish" />
     <script type="application/ld+json">
       {"@context":"https://schema.org","@type":"ResearchProject","name":"Agentic Skill Unlearning Evaluation","author":{"@type":"Person","name":"Jenny Yang","url":"https://jjjjeny.github.io/"},"url":"https://jjjjeny.github.io/projects/agentic-unlearning/","about":["Agentic AI","AI evaluation","Skill unlearning","Runtime evaluation","Coding agents"]}
     </script>
@@ -25,8 +25,8 @@
     <header class="site-header"><a href="../../">Jenny Yang</a><a href="../../#work">All work</a></header>
     <main>
       <section class="case-hero">
-        <p class="eyebrow">UT Austin &middot; Agentic AI evaluation &middot; Preliminary results</p>
         <h1>Can an agent forget a skill it learned?</h1>
+        <p class="case-context">UT Austin &middot; Agentic AI evaluation &middot; Preliminary results</p>
         <p class="dek">We taught a coding agent a skill, removed every trace we could identify, and tested it on a new version of the task. Unlearning succeeds if the agent then looks like one that never saw the skill.</p>
         <dl class="case-facts">
           <div><dt>My contribution</dt><dd>Evaluation design, diagnostics, and analysis</dd></div>
@@ -36,7 +36,7 @@
       </section>
 
       <div class="case-body">
-        <nav class="case-nav" aria-label="Case study sections">
+        <nav class="case-nav" aria-label="Case study sections" data-section-nav>
           <a href="#question">Question</a><a href="#method">Method</a><a href="#measure">Measure</a><a href="#input-result">Input result</a><a href="#behavior">Behavior</a><a href="#next">Next test</a>
         </nav>
         <article class="case-content">
@@ -75,6 +75,7 @@
           <section id="input-result">
             <p class="eyebrow">04 &middot; Result 1</p>
             <h2>Input-level unlearning held in the measured runs</h2>
+            <p><strong>These numbers describe the inputs sent to the model, not proof that its behavior forgot the skill.</strong></p>
             <div class="metric-grid">
               <div class="metric"><strong>12 / 12</strong><span>First post-unlearning requests matched A0 except for date and session ID</span></div>
               <div class="metric"><strong>0 / 350</strong><span>Later post-unlearning requests contained the skill's hidden rule</span></div>
@@ -110,6 +111,7 @@
       </div>
       <div class="next-project"><p class="eyebrow">Next case</p><a href="../contract-review-agent/">Contract Review Agent &rarr;</a></div>
     </main>
-    <footer><p>Jenny (Yung-Ching) Yang &middot; Technical Product Manager &middot; Austin, Texas</p></footer>
+    <footer><p>Want to discuss the evaluation or its limitations?</p><a href="mailto:yungching68@gmail.com">Email Jenny</a><a href="../../#work">All selected work</a><p class="footer-identity">Jenny (Yung-Ching) Yang &middot; Austin, Texas</p></footer>
+    <script src="../../navigation.js" defer></script>
   </body>
 </html>

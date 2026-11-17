@@ -15,7 +15,7 @@
     <link rel="icon" type="image/webp" href="../../assets/yc-icon.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../project.css" />
+    <link rel="stylesheet" href="../../project.css?v=20261117-polish" />
     <script type="application/ld+json">
       {"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Contract Review Agent","author":{"@type":"Person","name":"Jenny Yang","url":"https://jjjjeny.github.io/"},"codeRepository":"https://github.com/JJJJeny/contract-review-agent","url":"https://jjjjeny.github.io/projects/contract-review-agent/","about":["Agentic AI","Contract review","Human in the loop","AI evaluation"]}
     </script>
@@ -24,13 +24,13 @@
     <header class="site-header"><a href="../../">Jenny Yang</a><a href="../../#work">All work</a></header>
     <main>
       <section class="case-hero">
-        <p class="eyebrow">UT Austin &middot; Agentic AI product &middot; Team project</p>
         <h1>Contract review with human judgment built in</h1>
+        <p class="case-context">UT Austin &middot; Agentic AI product &middot; Team project</p>
         <p class="dek">My teammate and I built a bounded agent to help small businesses review vendor service agreements without hiding the evidence, uncertainty, or final decision from the user.</p>
         <dl class="case-facts"><div><dt>Role</dt><dd>Product design, workflow, and evaluation</dd></div><div><dt>User</dt><dd>Small-business contract reviewer</dd></div><div><dt>Control</dt><dd>Human approval for consequential decisions</dd></div></dl>
       </section>
       <div class="case-body">
-        <nav class="case-nav" aria-label="Case study sections"><a href="#problem">Problem</a><a href="#workflow">Agent design</a><a href="#controls">Controls</a><a href="#evaluation">Evaluation</a><a href="#learning">Learning</a></nav>
+        <nav class="case-nav" aria-label="Case study sections" data-section-nav><a href="#problem">Problem</a><a href="#workflow">Agent design</a><a href="#controls">Controls</a><a href="#evaluation">Evaluation</a><a href="#learning">Learning</a></nav>
         <article class="case-content">
           <section id="problem"><p class="eyebrow">01 &middot; Problem</p><h2>Small teams still need a first pass before legal review</h2><p>Vendor agreements repeat many of the same questions: payment terms, renewal, termination, liability, data handling, and service commitments. Small businesses may not have dedicated legal operations to review each document consistently.</p><p>We focused on the first-pass workflow. The agent identifies clauses that deserve attention and shows the evidence behind each finding; it does not make the final legal decision.</p></section>
           <section id="workflow"><p class="eyebrow">02 &middot; Agent design</p><h2>Bound the task before adding autonomy</h2><p>The workflow breaks contract review into explicit steps: ingest the agreement, extract relevant clauses, compare them with the review criteria, surface risks with supporting text, and route the result to a person.</p><ul><li>Structured clause extraction</li><li>Policy and requirement checks</li><li>Risk findings linked to source evidence</li><li>Human review before acceptance</li></ul><p>Making the stages visible helped us reason about where the system could fail and where a user needed control.</p></section>
@@ -41,6 +41,7 @@
       </div>
       <div class="next-project"><p class="eyebrow">Return</p><a href="../../#work">View all selected work &rarr;</a></div>
     </main>
-    <footer><p>Jenny (Yung-Ching) Yang &middot; Technical Product Manager &middot; Austin, Texas</p></footer>
+    <footer><p>Want to discuss agent workflows or human-review controls?</p><a href="mailto:yungching68@gmail.com">Email Jenny</a><a href="../../#work">All selected work</a><p class="footer-identity">Jenny (Yung-Ching) Yang &middot; Austin, Texas</p></footer>
+    <script src="../../navigation.js" defer></script>
   </body>
 </html>
