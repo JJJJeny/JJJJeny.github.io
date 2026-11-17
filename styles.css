@@ -108,14 +108,14 @@ nav a:hover,
 }
 
 .hero {
-  width: min(var(--max), 92vw);
+  width: min(1320px, 92vw);
   min-height: 0;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
   gap: 5vw;
   align-items: center;
-  padding: 4rem 0 3rem;
+  padding: 5rem 0 4rem;
 }
 
 .eyebrow,
@@ -192,8 +192,23 @@ h1 {
 
 .portrait-wrap {
   position: relative;
-  width: min(100%, 290px);
+  width: min(100%, 350px);
   justify-self: end;
+}
+
+.hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+.hero-proof strong, .hero-proof span { display: block; }
+.hero-proof strong { font-size: 0.92rem; }
+.hero-proof span { margin-top: 0.3rem; color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+@media (max-width: 800px) {
+  .hero-proof { grid-template-columns: 1fr; gap: 0.9rem; }
 }
 
 .portrait {
