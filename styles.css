@@ -109,14 +109,14 @@ nav a:hover,
 
 .hero {
   width: min(1320px, 92vw);
-  min-height: calc(100svh - 72px);
+  min-height: min(650px, calc(85svh - 72px));
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
   grid-template-areas: "portrait copy";
   column-gap: clamp(3rem, 7vw, 7rem);
   align-items: center;
-  padding: 4rem 0;
+  padding: 4.5rem 0 3rem;
 }
 
 .eyebrow,
@@ -180,6 +180,88 @@ h1 {
   width: min(100%, 390px);
   justify-self: center;
 }
+
+.avatar-stage {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.avatar-stage:focus-visible,
+.motion-toggle:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+
+.jenny-avatar { display: block; width: 100%; height: auto; }
+.avatar-eyes { transform-origin: 212px 184px; }
+.motion-enabled .avatar-eyes { animation: avatar-blink 6s infinite; }
+.avatar-pupils { transform: translate(var(--gaze-x, 0px), var(--gaze-y, 0px)); }
+.avatar-hand { opacity: 0; transform-origin: 320px 347px; }
+.avatar-greeting { opacity: 0; }
+.is-waving .avatar-hand { opacity: 1; animation: avatar-wave 1.4s ease-in-out; }
+.is-waving .avatar-greeting { opacity: 1; }
+.avatar-hint {
+  position: absolute;
+  right: 0;
+  bottom: 9%;
+  font: 600 .8rem "Manrope", sans-serif;
+  transform: rotate(-8deg);
+}
+.avatar-hint span { color: var(--blue); }
+.motion-toggle {
+  display: block;
+  margin: .75rem auto 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: .7rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.motion-toggle[hidden] { display: none; }
+.about-photo {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  object-position: center 36%;
+  border-radius: 50%;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@keyframes avatar-blink {
+  0%, 44%, 48%, 100% { transform: scaleY(1); }
+  46% { transform: scaleY(.08); }
+}
+@keyframes avatar-wave {
+  0%, 100% { transform: rotate(0); }
+  20%, 60% { transform: rotate(12deg); }
+  40%, 80% { transform: rotate(-9deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-enabled .avatar-eyes,
+  .is-waving .avatar-hand { animation: none; }
+  .avatar-pupils { transform: none; }
+}
+.motion-paused .avatar-eyes,
+.motion-paused .avatar-hand { animation: none; }
+.motion-paused .avatar-pupils { transform: none; }
 
 .portrait {
   width: 100%;
@@ -725,21 +807,21 @@ details p {
 
   .hero {
     min-height: auto;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "copy"
       "portrait";
-    row-gap: 2.5rem;
-    padding: 4rem 0 3rem;
+    row-gap: 1.5rem;
+    padding: 2.5rem 0 2rem;
   }
 
   h1 {
-    font-size: clamp(3.3rem, 17vw, 4.8rem);
+    font-size: clamp(2.7rem, 14vw, 4.8rem);
   }
 
   .portrait-wrap {
     width: min(72vw, 250px);
-    justify-self: start;
+    justify-self: center;
   }
 
   .hero-values {

@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261117-1" />
+    <link rel="stylesheet" href="styles.css?v=20261117-avatar" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -78,14 +78,45 @@
         </div>
 
         <div class="portrait-wrap">
-          <img
-            class="portrait"
-            src="assets/jenny-headshot.jpg"
-            alt="Jenny Yang"
-            width="2048"
-            height="1365"
-          />
+          <button class="avatar-stage" type="button" aria-label="Say hi to Jenny">
+            <svg class="jenny-avatar" viewBox="0 0 420 420" fill="none" aria-hidden="true">
+              <path d="M53 233C27 132 103 42 215 49C319 32 401 121 371 235C399 332 317 380 207 373C102 396 39 332 53 233Z" fill="#C5EEDF"/>
+              <g stroke="#202127" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M113 305C108 267 103 213 111 153C117 93 151 68 210 69C272 68 307 112 307 177L316 320Z" fill="#25262D"/>
+                <path d="M80 365C88 307 123 288 178 280H240C295 286 331 314 340 365" fill="#F8F7F2"/>
+                <path d="M179 247V284L207 306L239 283V246" fill="#E8B99A"/>
+                <path d="M153 169C135 158 132 177 140 192L155 204M270 169C286 158 290 178 281 192L267 204" fill="#F1CDB2"/>
+                <path d="M151 143C151 105 183 98 208 98C245 98 272 125 272 161L267 214C263 245 238 267 211 267C181 267 156 242 152 213Z" fill="#F1CDB2"/>
+                <path d="M146 177C140 138 146 101 198 92C181 123 159 141 146 177Z" fill="#25262D"/>
+                <path d="M198 92C241 84 280 113 277 181C264 145 226 137 198 92Z" fill="#25262D"/>
+                <path d="M165 168Q179 161 191 167M231 167Q243 161 256 169"/>
+                <g class="avatar-eyes">
+                  <g class="avatar-pupils" fill="#202127" stroke="none">
+                    <ellipse cx="180" cy="184" rx="4.5" ry="6"/>
+                    <ellipse cx="244" cy="184" rx="4.5" ry="6"/>
+                  </g>
+                </g>
+                <path d="M210 187L205 205H214" stroke="#C28D73" stroke-width="2.5"/>
+                <path d="M193 224Q211 239 230 223" stroke-width="3"/>
+                <path d="M147 200L150 221M268 201L265 219" stroke="#E4A58F" stroke-width="7" opacity=".5"/>
+                <path d="M145 223C153 266 157 305 137 336C111 316 106 280 112 239M273 217C266 269 275 307 292 336C313 310 319 277 309 232" fill="#25262D"/>
+                <path d="M177 280L162 299L192 320L207 306L223 320L254 299L239 281M207 307V363"/>
+                <circle cx="219" cy="338" r="2" fill="#202127" stroke="none"/>
+                <g class="avatar-hand">
+                  <path d="M302 350L325 280L352 284L342 360" fill="#F8F7F2"/>
+                  <path d="M326 285L319 264L306 249Q301 241 308 238Q313 235 323 247L317 215Q315 205 322 204Q329 203 331 215L337 236L336 205Q336 195 343 196Q350 196 350 207L351 236L356 213Q359 204 365 207Q371 209 368 219L363 244L369 232Q374 223 380 228Q385 231 380 240L368 269Q362 285 352 292" fill="#F1CDB2"/>
+                </g>
+              </g>
+              <g class="avatar-greeting">
+                <path d="M310 79H370Q383 79 383 92V115Q383 128 370 128H339L325 141V128H310Q297 128 297 115V92Q297 79 310 79Z" fill="#2825D9"/>
+                <text x="340" y="111" text-anchor="middle" fill="white" font-size="22" font-family="Arial, sans-serif" font-weight="700">Hi!</text>
+              </g>
+            </svg>
+            <span class="avatar-hint" aria-hidden="true">Say hi <span>↗</span></span>
+          </button>
           <p class="portrait-note">Austin, TX<br />M.S. Information Science, UT Austin &rsquo;27</p>
+          <button class="motion-toggle" type="button" aria-pressed="true" hidden>Motion on</button>
+          <span class="visually-hidden avatar-status" role="status"></span>
         </div>
       </section>
 
@@ -289,6 +320,7 @@
         </div>
         <div class="about-grid">
           <div class="about-copy">
+            <img class="about-photo" src="assets/jenny-headshot.jpg" alt="Jenny Yang" width="2048" height="1365" loading="lazy" />
             <p>
               I&rsquo;m a technical product manager with B2B experience across cloud security and
               service robotics, plus hands-on work in agentic AI evaluation and product prototyping.
@@ -324,6 +356,7 @@
       <p class="footer-note">Jenny (Yung-Ching) Yang &middot; Austin, Texas</p>
     </footer>
 
+    <script src="avatar.js" defer></script>
     <!-- Cloudflare Web Analytics -->
     <script
       type="module"
