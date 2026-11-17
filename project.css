@@ -7,6 +7,7 @@
   --mint: #bff2df;
   --line: #cfd0d2;
   --muted: #62646b;
+  --surface: #f0f3ef;
   --max: 980px;
 }
 
@@ -48,7 +49,7 @@ p, dd, li { text-wrap: pretty; }
 .case-hero { padding: 6.5rem 0 5rem; }
 .eyebrow {
   margin: 0 0 1rem;
-  color: var(--blue);
+  color: var(--muted);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -67,7 +68,7 @@ h1 { max-width: 900px; margin: 0; font-size: clamp(3rem, 7vw, 5.9rem); }
   background: var(--line);
 }
 .case-facts div { padding: 1.2rem; background: var(--white); }
-.case-facts dt { color: var(--blue); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; }
+.case-facts dt { color: var(--ink); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; }
 .case-facts dd { margin: 0.35rem 0 0; font-weight: 600; }
 .case-body {
   display: grid;
@@ -103,11 +104,12 @@ h1 { max-width: 900px; margin: 0; font-size: clamp(3rem, 7vw, 5.9rem); }
   min-height: 170px;
   padding: 1.5rem;
   border-radius: 6px;
-  background: var(--blue);
-  color: var(--white);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
 }
 .metric strong { display: block; font-family: "Manrope", sans-serif; font-size: 2.5rem; line-height: 1; }
-.metric span { display: block; margin-top: 0.8rem; color: #e2e3ff; }
+.metric span { display: block; margin-top: 0.8rem; color: #3b574a; }
 .callout { margin: 2rem 0 0; padding: 1.5rem; border: 1px solid var(--line); background: var(--white); }
 .decision-record { margin-top: 2rem; }
 .decision-record .artifact-note { font-size: .85rem; color: var(--muted); }

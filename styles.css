@@ -9,6 +9,9 @@
   --mint: #bff2df;
   --line: #cfd0d2;
   --muted: #62646b;
+  --surface: #f0f3ef;
+  --meter-track: #dcebe3;
+  --meter-fill: #42765e;
   --max: 1180px;
 }
 
@@ -140,7 +143,7 @@ nav a:hover,
 .project-meta,
 .section-index {
   margin: 0 0 1rem;
-  color: var(--blue);
+  color: var(--muted);
   font-size: 0.79rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -335,13 +338,13 @@ p, dd { text-wrap: pretty; }
   flex-direction: column;
   justify-content: center;
   padding: 1.75rem;
-  background: var(--blue);
-  color: var(--white);
+  background: var(--surface);
+  color: var(--ink);
 }
 
 .cloudflare-summary p {
   margin: 0 0 1rem;
-  color: var(--mint);
+  color: #3b574a;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -360,21 +363,23 @@ p, dd { text-wrap: pretty; }
 
 .meter {
   width: 100%;
-  height: 14px;
-  margin-top: 3rem;
-  background: rgba(255, 255, 255, 0.2);
+  flex: 0 0 12px;
+  height: 12px;
+  min-height: 12px;
+  margin-top: 1.25rem;
+  background: var(--meter-track);
 }
 
 .meter i {
   display: block;
   width: 60%;
   height: 100%;
-  background: var(--coral);
+  background: var(--meter-fill);
 }
 
 .cloudflare-summary small {
   margin-top: 0.65rem;
-  color: #dedffe;
+  color: #3b574a;
 }
 
 @media (min-width: 1000px) {
@@ -409,8 +414,8 @@ p, dd { text-wrap: pretty; }
 }
 
 .evaluation-summary {
-  background: #e8efff;
-  color: var(--blue-dark);
+  background: #f1f0ea;
+  color: var(--ink);
 }
 
 .evaluation-summary p,
@@ -432,25 +437,8 @@ p, dd { text-wrap: pretty; }
   font-size: 0.86rem;
 }
 
-.condition-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-}
-
-.condition-row i {
-  height: 36px;
-  border: 2px solid currentColor;
-}
-
-.condition-row i:nth-child(2),
-.condition-row i:nth-child(4) {
-  background: var(--coral);
-  border-color: var(--coral);
-}
-
 .agent-summary {
-  background: var(--mint);
+  background: #e4efe8;
   color: #123c35;
 }
 
@@ -519,7 +507,7 @@ p, dd { text-wrap: pretty; }
 }
 
 .project-evidence dt {
-  color: var(--blue);
+  color: var(--ink);
   font-weight: 700;
 }
 
@@ -593,7 +581,7 @@ details {
 
 summary {
   cursor: pointer;
-  color: var(--blue);
+  color: var(--ink);
   font-weight: 700;
 }
 
@@ -745,7 +733,7 @@ details p {
   grid-template-columns: 1.35fr 0.65fr;
   gap: 4rem;
   padding: 6rem max(4vw, calc((100vw - var(--max)) / 2));
-  background: var(--blue);
+  background: var(--ink);
   color: var(--white);
   scroll-margin-top: 72px;
 }
@@ -774,10 +762,12 @@ details p {
   color: var(--mint);
 }
 
+.footer-links a:focus-visible { outline-color: var(--mint); }
+
 .footer-note {
   grid-column: 1 / -1;
   margin: 2rem 0 0;
-  color: #d3d4fb;
+  color: #cfd0d5;
   font-size: 0.85rem;
 }
 
