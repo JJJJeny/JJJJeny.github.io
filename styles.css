@@ -112,10 +112,11 @@ nav a:hover,
   min-height: 0;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
-  gap: 5vw;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  column-gap: clamp(3rem, 7vw, 7rem);
+  row-gap: 3.5rem;
   align-items: center;
-  padding: 5rem 0 4rem;
+  padding: 5rem 0 3.5rem;
 }
 
 .eyebrow,
@@ -145,7 +146,7 @@ h3 {
 h1 {
   max-width: 8ch;
   margin: 0;
-  font-size: 5.8rem;
+  font-size: clamp(5.8rem, 8vw, 7.2rem);
   font-weight: 800;
 }
 
@@ -155,6 +156,10 @@ h1 {
   font-family: "Manrope", Arial, sans-serif;
   font-size: 1.55rem;
   line-height: 1.45;
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 .hero-actions {
@@ -197,18 +202,47 @@ h1 {
 }
 
 .hero-proof {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2.5rem;
-  padding-top: 1.2rem;
+  margin-top: 0;
+  padding: 0;
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
-.hero-proof strong, .hero-proof span { display: block; }
-.hero-proof strong { font-size: 0.92rem; }
-.hero-proof span { margin-top: 0.3rem; color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
-@media (max-width: 800px) {
-  .hero-proof { grid-template-columns: 1fr; gap: 0.9rem; }
+
+.hero-proof > div {
+  min-height: 108px;
+  padding: 1.35rem clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.hero-proof > div:first-child {
+  padding-left: 0;
+}
+
+.hero-proof > div + div {
+  border-left: 1px solid var(--line);
+}
+
+.hero-proof strong,
+.hero-proof span {
+  display: block;
+}
+
+.hero-proof strong {
+  margin-bottom: 0.45rem;
+  color: var(--blue);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.hero-proof span {
+  max-width: 30ch;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .portrait {
@@ -756,6 +790,7 @@ details p {
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
+    row-gap: 2.5rem;
     padding: 3rem 0 2.5rem;
   }
 
@@ -764,12 +799,31 @@ details p {
   }
 
   .hero-statement {
-    font-size: 1.25rem;
+    font-size: 1.18rem;
+    overflow-wrap: anywhere;
   }
 
   .portrait-wrap {
     width: min(72vw, 250px);
     justify-self: start;
+    order: 3;
+  }
+
+  .hero-proof {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    order: 2;
+  }
+
+  .hero-proof > div,
+  .hero-proof > div:first-child {
+    min-height: 0;
+    padding: 1rem 0;
+  }
+
+  .hero-proof > div + div {
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 
   .selected-work-grid,
